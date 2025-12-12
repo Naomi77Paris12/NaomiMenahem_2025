@@ -87,6 +87,9 @@ body{
 
 .nav_avatar{
   width: 35px;
+  height: 35px;
+  cursor: pointer;
+  border-radius: 4px;
 }
 
 #banner_buttons{
