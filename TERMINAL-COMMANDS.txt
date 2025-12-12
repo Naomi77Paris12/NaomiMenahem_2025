@@ -1,0 +1,18 @@
+COPY AND PASTE THESE COMMANDS ONE AT A TIME INTO TERMINAL:
+
+1. cd /Users/yazeewilson/Netflix-UI-Clone
+
+2. git init
+
+3. git add .
+
+4. git commit -m "Initial commit"
+
+5. git remote add origin https://github.com/Naomi77Paris12/NaomiMenahem_2025.git
+
+6. git branch -M main
+
+7. git push -u origin main
+
+When asked for username: Naomi77Paris12
+When asked for password: Use Personal Access Token (see instructions)

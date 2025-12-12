@@ -1,0 +1,84 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Netflix UI Clone</title>
+
+    <link rel="icon" type="image/x-icon" href="Images/favicon.ico">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="main.css"/>
+    <script src="app.js"></script>
+
+  </head>
+  <body>
+
+    <!-- navbar section -->
+    <div class="nav">
+      <div class="nav__left">
+        <img class="nav_logo" src="Images/netflix title logo.png" alt="">
+      </div>
+
+      <div class="nav__right">
+        <img src="Images/Account_logo.png" class="nav_avatar" alt="">
+      </div>
+
+    </div>
+
+
+    <!-- banner section -->
+    <header id="banner">
+      <div id="banner_contents">
+        <h1 id="banner_title"></h1>
+        <div id="banner_buttons">
+        <button id="banner_button" class="more-info-btn">
+          <svg width="20" height="20" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" style="margin-right: 8px; vertical-align: middle;">
+            <path d="M24 32V24M24 16H24.02M44 24C44 35.0457 35.0457 44 24 44C12.9543 44 4 35.0457 4 24C4 12.9543 12.9543 4 24 4C35.0457 4 44 12.9543 44 24Z" stroke="white" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          More Info
+        </button>
+        <a href="https://www.naomimenahem.com" target="_blank" rel="noopener noreferrer" id="banner_button">Portfolio</a>
+      </div>
+
+      <p id="banner_desc"></p>
+      </div>
+
+      <div id="banner_fadeBottom"></div>
+    </header>
+
+    <!-- rows -->
+    <div id="headrow">
+    </div>
+
+    <!-- Modal Overlay -->
+    <div id="modal-overlay" class="modal-overlay">
+      <div class="modal-content">
+        <div class="modal-image-wrapper">
+          <img src="Images/Netflix_cover_aboutMe1 2.png" alt="About Me" class="modal-image">
+          <button class="modal-close" id="modal-close">
+            <img src="Images/Close-Circle--Streamline-Solar.svg" alt="Close" class="close-icon">
+          </button>
+          <div class="modal-text">
+            <div class="modal-text-title">Naomi Designs — A True Story</div>
+            <div class="modal-text-body">UX Designer. Wife. Mom. Muhammad Ali Wannabe.</div>
+            <div class="modal-text-body">I am a UX Designer who leads complex, cross-functional problem spaces — especially where data, collaboration, and AI intersect. I deeply value creating a safe, inclusive space for diverse partners to show up as their whole selves. That foundation is what lets us design more ethical, meaningful products and make strong decisions together.</div>
+            <div class="modal-text-body">Off the clock, I trade pixels for punches, family dinners, and mentoring sessions at YearUp—proving that great design, like boxing, is all about rhythm, balance, and heart.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      window.addEventListener("scroll",function(){
+
+        var nav = document.querySelector(".nav");
+        nav.classList.toggle("active", window.scrollY > 0);
+      })
+      
+    </script>
+  </body>
+</html>

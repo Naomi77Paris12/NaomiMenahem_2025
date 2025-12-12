@@ -1,0 +1,405 @@
+*{
+  margin: 0;
+  padding: 0;
+}
+
+body{
+  font-family: 'Netflix Sans', sans-serif;
+  background-color: #111;
+}
+
+::-webkit-scrollbar{
+  width: 7px;
+  background-color: #111;
+}
+
+::-webkit-scrollbar-thumb{
+  background-color: white;
+  border-radius: 10px;
+}
+
+#banner{
+  color: white;
+  object-fit: contain;
+  height: 844px;
+  background-position: center center;
+  background-size: cover;
+}
+
+#banner_contents{
+  margin-left: 70px;
+  padding-top: 540px;
+  height: 190px;
+
+}
+.nav{
+  position: fixed;
+  top: 0;
+  padding: 2.5px 40px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 1;
+  transition-timing-function: ease-in;
+  transition: all .5s;
+}
+
+.nav.active{
+  background-color: #111;
+}
+
+#banner_title{
+  font-family: 'Bebas Neue', cursive;
+  font-size: 2.31rem;
+  font-weight: 400;
+  letter-spacing: 0.1em;
+  padding-bottom: 0.3rem;
+  line-height: 0.9;
+  text-transform: uppercase;
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8);
+}
+
+.nav_logo{
+  width: 120px
+}
+
+#banner_desc{
+  width: 45rem;
+  line-height: 1.5;
+  padding-top: 1rem;
+  font-size: .9rem;
+  max-width: 360px;
+  height: 80px;
+}
+
+.nav__left{
+  margin-left: 10px;
+
+}
+
+.nav__right{
+  position: fixed;
+  right: 20px;
+  display: flex;
+  margin-right: 10px;
+}
+
+.nav_avatar{
+  width: 35px;
+}
+
+#banner_buttons{
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+#banner_button{
+  cursor: pointer;
+  color: white;
+  outline: none;
+  border: none;
+  font-weight: 700;
+  font-size: 1.1rem;
+  border-radius: .2vw;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  padding-top: .5rem;
+  background-color: rgba(51,51,51,.5);
+  padding-bottom: .5rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  text-decoration: none;
+}
+
+#banner_button:hover{
+  color: black;
+  background-color: #e6e6e6;
+  transition: all .3s;
+}
+
+#banner_button:hover svg path{
+  stroke: black;
+  transition: all .3s;
+}
+
+#banner_fadeBottom{
+  height: 7.4rem;
+  background: linear-gradient(
+    180deg,
+    transparent,
+    rgba(37,37,37, .61),
+    #111
+  );
+}
+
+#headrow{
+  margin-top: calc(3rem + 7px);
+}
+
+.row{
+  margin-left: 20px;
+  color: white;
+}
+
+.row_poster{
+  object-fit: contain;
+  width: 100%;
+  max-height: 120px;
+  margin-right: 10px;
+  transition: transform 500ms;
+}
+
+.row_posters::-webkit-scrollbar{
+  display: none;
+}
+
+.row_posters{
+  display: flex;
+  overflow-y: hidden;
+  overflow-x: scroll;
+  padding: 20px;
+  
+}
+
+.row_poster:hover{
+  transform: scale(1.08);
+}
+
+.row_posterLarge, 
+.row_posterLarge1,
+.row_posterLarge2{
+  object-fit: contain;
+  width: 100%;
+  max-height: 250px;
+  margin-right: 10px;
+  transition: transform 500ms;
+
+}
+
+.row_posterLarge:hover,
+.row_posterLarge1:hover,
+.row_posterLarge2:hover{
+  transform: scale(1.09);
+  opacity: 1;
+
+}
+
+.row_posterLarge-full {
+  width: 480px !important;
+  height: 250px !important;
+  max-width: none !important;
+  min-width: 480px !important;
+  flex-shrink: 0 !important;
+  margin-right: 8px !important;
+  object-fit: cover;
+}
+
+/* Modal Overlay */
+.modal-overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.9);
+  z-index: 1000;
+  justify-content: center;
+  align-items: center;
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+.modal-overlay.active {
+  display: flex;
+}
+
+.modal-content {
+  position: relative;
+  max-width: 90%;
+  max-height: 90vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: scaleIn 0.3s ease-in-out;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.modal-content::-webkit-scrollbar {
+  width: 7px;
+}
+
+.modal-content::-webkit-scrollbar-thumb {
+  background-color: rgba(255, 255, 255, 0.5);
+  border-radius: 10px;
+}
+
+.modal-content::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+
+.modal-image-wrapper {
+  position: relative;
+  display: inline-block;
+}
+
+.modal-image {
+  max-width: 100%;
+  max-height: 90vh;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  border-radius: 8px;
+  display: block;
+}
+
+.modal-text {
+  position: absolute;
+  bottom: -127px;
+  left: 0;
+  right: 0;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0.6) 50%, transparent 100%);
+  padding: 40px 20px 20px 20px;
+  color: white;
+  border-radius: 0 0 8px 8px;
+}
+
+.modal-text-title {
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin-bottom: 12px;
+  line-height: 1.4;
+}
+
+.modal-text-body {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin-bottom: 10px;
+}
+
+.modal-text-body:last-child {
+  margin-bottom: 0;
+}
+
+.modal-close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.2s;
+  z-index: 10;
+}
+
+.close-icon {
+  width: 40px;
+  height: 40px;
+  filter: brightness(0) invert(1);
+  transition: transform 0.2s;
+}
+
+.modal-close:hover .close-icon {
+  transform: scale(1.2);
+  filter: brightness(0) invert(0.9);
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    transform: scale(0.9);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* Responsive styling for banner title */
+@media (max-width: 768px) {
+  #banner_title {
+    font-size: 1.54rem;
+  }
+  
+  .modal-close {
+    top: 8px;
+    right: 8px;
+    width: 35px;
+    height: 35px;
+  }
+  
+  .close-icon {
+    width: 35px;
+    height: 35px;
+  }
+  
+  .modal-text {
+    padding: 30px 15px 15px 15px;
+  }
+  
+  .modal-text-title {
+    font-size: 1.1rem;
+  }
+  
+  .modal-text-body {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  #banner_title {
+    font-size: 1.29rem;
+    letter-spacing: 0.05em;
+  }
+  
+  .modal-content {
+    max-width: 95%;
+  }
+  
+  .modal-close {
+    top: 5px;
+    right: 5px;
+    width: 30px;
+    height: 30px;
+  }
+  
+  .close-icon {
+    width: 30px;
+    height: 30px;
+  }
+  
+  .modal-text {
+    padding: 25px 12px 12px 12px;
+  }
+  
+  .modal-text-title {
+    font-size: 1rem;
+    margin-bottom: 10px;
+  }
+  
+  .modal-text-body {
+    font-size: 0.85rem;
+    margin-bottom: 8px;
+  }
+}
