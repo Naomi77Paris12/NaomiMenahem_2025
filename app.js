@@ -67,8 +67,8 @@ fetch(requests.fetchNetflixOrignals)
   const row_posters = document.createElement("div");
   row_posters.className = "row_posters";
   row.appendChild(row_posters);
-  // Create exactly 3 thumbnails, all using the same image
-  for (let i = 0; i < 3; i++) {
+  // Create exactly 4 thumbnails
+  for (let i = 0; i < 4; i++) {
     const poster = document.createElement("img");
     poster.className = "row_posterLarge row_posterLarge-full";
     poster.id = "naomi-original-" + (i + 1);
@@ -90,11 +90,23 @@ fetch(requests.fetchNetflixOrignals)
       poster.src = "Images/tableau-reimagined.png?v=" + Date.now();
       row_posters.appendChild(poster);
     }
-    // Third thumbnail (index 2) uses portfolio image and is clickable
+    // Third thumbnail (index 2) uses CRT image and links to CRT redesign - second from right
     else if (i === 2) {
+      poster.src = "Images/CRT.png?v=" + Date.now();
+      poster.style.cursor = "pointer";
+      const link = document.createElement("a");
+      link.href = "https://naomimenahem.com/crt-redesign";
+      link.target = "_blank";
+      link.rel = "noopener noreferrer";
+      link.style.textDecoration = "none";
+      link.appendChild(poster);
+      row_posters.appendChild(link);
+    }
+    // Fourth thumbnail (index 3) uses portfolio image and is clickable - rightmost
+    else if (i === 3) {
       poster.src = "Images/portfolio-thumbnail.png?v=" + Date.now();
       poster.style.cursor = "pointer";
-      // Create link wrapper for third thumbnail
+      // Create link wrapper for fourth thumbnail
       const link = document.createElement("a");
       link.href = "https://www.naomimenahem.com";
       link.target = "_blank";
