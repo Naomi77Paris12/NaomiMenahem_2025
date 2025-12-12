@@ -87,7 +87,7 @@ fetch(requests.fetchNetflixOrignals)
     }
     // Third thumbnail (index 2) uses portfolio image and is clickable
     else if (i === 2) {
-      poster.src = "Images/portfolio-thumbnail.png?v=" + Date.now();
+      poster.src = "./Images/portfolio-thumbnail.png?v=" + Date.now();
       poster.style.cursor = "pointer";
       // Create link wrapper for third thumbnail
       const link = document.createElement("a");
