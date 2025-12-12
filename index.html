@@ -5,7 +5,14 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <base href="https://naomi77paris12.github.io/NaomiMenahem_2025/">
+    <script>
+      // Set base href dynamically - use relative path for local, absolute for GitHub Pages
+      if (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1') {
+        document.write('<base href="/">');
+      } else {
+        document.write('<base href="https://naomi77paris12.github.io/NaomiMenahem_2025/">');
+      }
+    </script>
     <title>Netflix UI Clone</title>
 
     <link rel="icon" type="image/x-icon" href="Images/favicon.ico">
