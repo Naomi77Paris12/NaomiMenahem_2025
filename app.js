@@ -85,6 +85,11 @@ fetch(requests.fetchNetflixOrignals)
       link.appendChild(poster);
       row_posters.appendChild(link);
     }
+    // Second thumbnail (index 1) uses Tableau Re-Imagined image
+    else if (i === 1) {
+      poster.src = "Images/tableau-reimagined.png?v=" + Date.now();
+      row_posters.appendChild(poster);
+    }
     // Third thumbnail (index 2) uses portfolio image and is clickable
     else if (i === 2) {
       poster.src = "Images/portfolio-thumbnail.png?v=" + Date.now();
@@ -97,9 +102,6 @@ fetch(requests.fetchNetflixOrignals)
       link.style.textDecoration = "none";
       link.appendChild(poster);
       row_posters.appendChild(link);
-    } else {
-      poster.src = "Images/naomi-original-1.png?v=" + Date.now();
-      row_posters.appendChild(poster);
     }
   }
 });
