@@ -85,10 +85,17 @@ fetch(requests.fetchNetflixOrignals)
       link.appendChild(poster);
       row_posters.appendChild(link);
     }
-    // Second thumbnail (index 1) uses Tableau Re-Imagined image
+    // Second thumbnail (index 1) uses Tableau Re-Imagined image and links to Figma prototype
     else if (i === 1) {
       poster.src = "Images/tableau-reimagined.png?v=" + Date.now();
-      row_posters.appendChild(poster);
+      poster.style.cursor = "pointer";
+      const link = document.createElement("a");
+      link.href = "https://www.figma.com/proto/yGOCu5SKIT9Na3FcueoYrL/Naomi-Menahem----Netflix?node-id=1072-54381&t=zXsgSvamIpXSlW0F-0&scaling=scale-down-width&content-scaling=fixed&page-id=1072%3A53944&starting-point-node-id=1072%3A54381";
+      link.target = "_blank";
+      link.rel = "noopener noreferrer";
+      link.style.textDecoration = "none";
+      link.appendChild(poster);
+      row_posters.appendChild(link);
     }
     // Third thumbnail (index 2) uses CRT image and links to CRT redesign - second from right
     else if (i === 2) {
