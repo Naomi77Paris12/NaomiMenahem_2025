@@ -41,7 +41,7 @@ fetch(requests.fetchNetflixOrignals)
   var banner_title = document.getElementById("banner_title");
   var banner_desc = document.getElementById("banner_desc");
   banner.style.backgroundImage = "url('Images/Nomi-hero-flipped.png')";
-  banner_desc.innerText = "Part storyteller, par systems thinker, Naomi designs for how people feel as much as what they do. Each project is a new experiment in empathy, craft, and courage--proof that great design isn't decoration, it's transformation.";
+  banner_desc.innerText = "Part storyteller, part systems thinker, Naomi designs for how people feel as much as what they do. Each project is a new experiment in empathy, craft, and courage--proof that great design isn't decoration, it's transformation.";
   banner_title.innerHTML = "Naomi Designs — <br>A True Story";
 })
 
