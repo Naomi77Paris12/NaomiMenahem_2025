@@ -75,6 +75,7 @@ fetch(requests.fetchNetflixOrignals)
     
     // First thumbnail (index 0) links to Figma prototype
     if (i === 0) {
+      poster.loading = "lazy";
       poster.src = "Images/naomi-original-1.png?v=" + Date.now();
       poster.style.cursor = "pointer";
       const link = document.createElement("a");
@@ -87,6 +88,7 @@ fetch(requests.fetchNetflixOrignals)
     }
     // Second thumbnail (index 1) uses Tableau Re-Imagined image and links to Figma prototype
     else if (i === 1) {
+      poster.loading = "lazy";
       poster.src = "Images/tableau-reimagined.png?v=" + Date.now();
       poster.style.cursor = "pointer";
       const link = document.createElement("a");
@@ -99,6 +101,7 @@ fetch(requests.fetchNetflixOrignals)
     }
     // Third thumbnail (index 2) uses CRT image and links to CRT redesign - second from right
     else if (i === 2) {
+      poster.loading = "lazy";
       poster.src = "Images/CRT.png?v=" + Date.now();
       poster.style.cursor = "pointer";
       const link = document.createElement("a");
@@ -111,6 +114,7 @@ fetch(requests.fetchNetflixOrignals)
     }
     // Fourth thumbnail (index 3) uses portfolio image and is clickable - rightmost
     else if (i === 3) {
+      poster.loading = "lazy";
       poster.src = "Images/portfolio-thumbnail.png?v=" + Date.now();
       poster.style.cursor = "pointer";
       // Create link wrapper for fourth thumbnail
@@ -149,6 +153,7 @@ fetch(requests.fetchPopular)
     poster.className = "row_posterLarge";
     var s2 = movie.id;
     poster.id = s2;
+    poster.loading = "lazy";
     poster.src = img_url + movie.poster_path;
     row_posters.appendChild(poster);
 
@@ -177,6 +182,7 @@ fetch(requests.fetchTrending)
     poster.className = "row_posterLarge";
     var s2 = movie.id;
     poster.id = s2;
+    poster.loading = "lazy";
     poster.src = img_url + movie.poster_path;
     row_posters.appendChild(poster);
 
